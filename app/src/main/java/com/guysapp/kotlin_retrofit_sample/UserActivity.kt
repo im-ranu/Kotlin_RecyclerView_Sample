@@ -2,11 +2,9 @@ package com.guysapp.kotlin_retrofit_sample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_user.*
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.DividerItemDecoration.HORIZONTAL
 import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
 
 
@@ -17,6 +15,10 @@ class UserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
+
+
+        setSupportActionBar(tbUserName)
+
 
 
         UserName.add("Ranjeet")
@@ -35,4 +37,6 @@ class UserActivity : AppCompatActivity() {
         rvUserList.adapter = UserAdapter(UserName,this)
 
     }
+
+
 }

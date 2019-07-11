@@ -3,4 +3,6 @@
 
 
     <string name="fetch_bt_txt">Fetch Random User List</string>
+
+    <string name="home_text">RecyclerView implementation in kotlin \n for more info mail \nranuluhar[at]gmail.com</string>
 </resources>
