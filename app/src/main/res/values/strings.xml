@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kotlin_Retrofit_Sample</string>
+    <string name="app_name">Kotlin_RecyclerView_Sample</string>
 
 
     <string name="fetch_bt_txt">Fetch Random User List</string>
