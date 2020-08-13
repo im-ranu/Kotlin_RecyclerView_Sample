@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_user.*
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
+import kotlin.random.Random
 
 
 class UserActivity : AppCompatActivity() {
 
-
+    lateinit var userAdapter : UserAdapter
     val UserName : ArrayList<String> = ArrayList();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +30,25 @@ class UserActivity : AppCompatActivity() {
         UserName.add("Sejal")
         UserName.add("Aayushi")
 
-
+         userAdapter = UserAdapter(UserName, this)
         rvUserList.layoutManager = LinearLayoutManager(this)
 
         val itemDecor = DividerItemDecoration(this, VERTICAL)
         rvUserList.addItemDecoration(itemDecor)
-        rvUserList.adapter = UserAdapter(UserName,this)
+        rvUserList.adapter = userAdapter
 
+
+        button.setOnClickListener {
+            userAdapter.addItem(getRandomString(7))
+        }
+
+    }
+
+    fun getRandomString(length: Int) : String {
+        val allowedChars = ('A'..'Z') + ('a'..'z')
+        return (1..length)
+            .map { allowedChars.random() }
+            .joinToString("")
     }
 
 

@@ -26,7 +26,7 @@ class UserAdapter(val items : ArrayList<String> ,val context : Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
 
-        holder?.tvAnimalType?.text = items.get(position)
+        holder.tvAnimalType?.text = items.get(position)
     }
 
 
@@ -34,4 +34,11 @@ class UserAdapter(val items : ArrayList<String> ,val context : Context) :
         // Holds the TextView that will add each animal to
         val tvAnimalType = view.tvUserName
     }
+
+
+    fun addItem(name : String){
+        items.add(name)
+        notifyDataSetChanged()
+    }
+
 }
